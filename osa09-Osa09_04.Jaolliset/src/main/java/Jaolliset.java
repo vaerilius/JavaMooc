@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Jaolliset {
@@ -19,7 +20,10 @@ public class Jaolliset {
     }
 
     public static ArrayList<Integer> jaolliset(ArrayList<Integer> luvut) {
-        return new ArrayList<>();
+        ArrayList<Integer> list = luvut.stream()
+                .filter(luku -> (luku % 2 == 0 || luku % 3 == 0 || luku % 5 == 0))
+                .collect(Collectors.toCollection(ArrayList::new));
+        return list;
     }
 
 }
