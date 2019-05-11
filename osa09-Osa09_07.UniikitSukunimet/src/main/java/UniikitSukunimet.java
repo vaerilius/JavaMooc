@@ -26,7 +26,11 @@ public class UniikitSukunimet {
             henkilot.add(new Henkilo(etunimi, sukunimi, syntymavuosi));
             System.out.println("");
         }
-
-        // toteuta uniikkien sukunimien tulostaminen aakkosjärjestyksessä tänne
+        
+        henkilot.stream()
+                .map(henkilo -> henkilo.getSukunimi())
+                .distinct()
+                .sorted()
+                .forEach(sukuNimi -> System.out.println(sukuNimi));
     }
 }

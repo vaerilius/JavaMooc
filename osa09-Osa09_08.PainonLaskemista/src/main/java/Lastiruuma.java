@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 
 public class Lastiruuma {
@@ -21,21 +20,17 @@ public class Lastiruuma {
     }
 
     public int yhteispaino() {
-        int summa = 0;
-        int indeksi = 0;
-        while (indeksi < this.matkalaukut.size()) {
-        summa += this.matkalaukut.get(indeksi).yhteispaino();
-        indeksi++;
-        }
+        int summa = this.matkalaukut.stream()
+                .map(laukku -> laukku.yhteispaino())
+                .reduce(0, (eSaldo, laukunPaino) -> eSaldo + laukunPaino);
+
         return summa;
     }
 
     public void tulostaTavarat() {
-        int indeksi = 0;
-        while (indeksi < this.matkalaukut.size()) {
-        this.matkalaukut.get(indeksi).tulostaTavarat();
-        indeksi++;
-        }
+        
+              matkalaukut.stream()
+                .forEach(tavara -> tavara.tulostaTavarat());
     }
 
     @Override

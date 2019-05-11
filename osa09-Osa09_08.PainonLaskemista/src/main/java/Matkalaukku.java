@@ -20,22 +20,17 @@ public class Matkalaukku {
     }
 
     public int yhteispaino() {
-        int summa = 0;
-        int indeksi = 0;
-        while (indeksi < this.tavarat.size()) {
-        summa += this.tavarat.get(indeksi).getPaino();
-        indeksi++;
-        }
+        int summa = tavarat.stream()
+                .map(tavara -> tavara.getPaino())
+                .reduce(0, (edellinenSumma, paino) -> edellinenSumma + paino);
+
         return summa;
     }
 
     public void tulostaTavarat() {
-        int indeksi = 0;
-        while (indeksi < this.tavarat.size()) {
-        Tavara t = this.tavarat.get(indeksi);
-        System.out.println(t);
-        indeksi++;
-        }
+
+        tavarat.stream()
+                .forEach(tavara -> System.out.println(tavara));
     }
 
     public Tavara raskainTavara() {
