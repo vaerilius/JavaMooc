@@ -13,5 +13,20 @@ public class KirjatTiedostosta {
         // testaa metodia täällä
 
     }
+    public static List<Kirja> lueKirjat(String tiedosto) {
+        List<Kirja> kirjat = new ArrayList<>();
+        try {
+            Files.lines(Paths.get(tiedosto))
+                    .map(rivi -> rivi.split(","))
+                    .filter(palat -> palat.length >= 4)
+                    .map(palat -> new Kirja(palat[0], Integer.valueOf(palat[1]),
+                            Integer.valueOf(palat[2]), palat[3]))
+                    .forEach(kirja -> kirjat.add(kirja));
+        } catch (Exception e) {
+            System.out.println("Virhe " + e.getMessage());
+        }
+        
+        return kirjat;
+    }
 
 }
