@@ -1,6 +1,6 @@
 
 
-public class Opiskelija {
+public class Opiskelija implements Comparable<Opiskelija>{
 
     private String nimi;
 
@@ -17,4 +17,10 @@ public class Opiskelija {
         return nimi;
     }
 
+
+    @Override
+    public int compareTo(Opiskelija opiskelija) {
+        
+        return this.nimi.compareTo(opiskelija.getNimi());
+    }
 }

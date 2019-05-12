@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Paaohjelma {
 
@@ -11,11 +12,14 @@ public class Paaohjelma {
 
         System.out.println(ihmisia);
 
-        /*
-         * Poista alla olevat kommentit, kun olet tehnyt compareTo metodin.
-         */
-        //Collections.sort(ihmisia);
+       
+
+        Collections.sort(ihmisia);
         System.out.println(ihmisia);
+        
+        Ihminen eka = new Ihminen("Aku", 0);
+Ihminen toka = new Ihminen("Roope", 2147483647);
+System.out.println(eka.compareTo(toka));
 
     }
 }
