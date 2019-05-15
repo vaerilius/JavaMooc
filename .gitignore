@@ -165,3 +165,10 @@ pip-log.txt
 #vsc
 .vscode/
 
+/osa10-Osa10_01.Asiakas/target/
+/osa10-Osa10_02.KirjaJaLentokone/target/
+/osa10-Osa10_03.NaytosJaLippu/target/
+/osa10-Osa10_04.OpiskelijaJaKorkeakoulu/target/
+/osa10-Osa10_05.PelaajaJaTekoaly/target/
+/osa10-Osa10_06.TallennettavaHenkilo/target/
+/osa10-Osa10_07.IsompiLuokkakaavio/target/
