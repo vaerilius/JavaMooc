@@ -3,7 +3,7 @@ public class Tarkistin {
 
     public boolean onViikonpaiva(String merkkijono) {
 
-        if (merkkijono.matches("(ma|ti|ke|to|la|su)")) {
+        if (merkkijono.matches("(ma|ti|ke|to|pe|la|su)")) {
             System.out.println("Muoto on oikea.");
             return true;
         } else {
@@ -24,8 +24,7 @@ public class Tarkistin {
     }
 
     public boolean kellonaika(String merkkijono) {
-        //jatka tästä
-        if (merkkijono.matches("[0-2][0-3]:[5][0-9]:[0-5][0-9]")) {
+        if (merkkijono.matches("([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]")) {
             System.out.println("Muoto on oikea.");
             return true;
         } else {

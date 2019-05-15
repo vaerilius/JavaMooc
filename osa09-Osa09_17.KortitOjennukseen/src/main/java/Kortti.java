@@ -1,6 +1,6 @@
 
 
-public class Kortti {
+public class Kortti implements Comparable<Kortti>{
 
     private int arvo;
     private Maa maa;
@@ -38,4 +38,14 @@ public class Kortti {
         return maa;
     }
 
+    @Override
+    public int compareTo(Kortti kortti) {
+          if (this.arvo == kortti.getArvo()) {
+            return this.maa.compareTo(kortti.maa);
+        } else if (this.arvo < kortti.getArvo()) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
 }
