@@ -1,7 +1,12 @@
 package sanakirja;
 
 public class Main {
+
     public static void main(String[] args) {
-        // Testaa sanakirjaa täällä
+        MuistavaSanakirja s = new MuistavaSanakirja("sanat.txt");
+        s.lataa();
+        s.kaanna("olut");
+        s.tallenna();
+
     }
 }

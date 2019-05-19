@@ -73,15 +73,12 @@ public class Keskiarvosensori implements Sensori {
             throw new IllegalStateException("Tyhjä");
         } else {
 
-            
-            int summa = 0;
-            
-            for (Sensori sensori : sensorit) {
-                summa += sensori.mittaa();
-            }
-            int ka = summa / sensorit.size();
+            int ka = (int) this.sensorit.stream()
+                    .mapToInt(mittausArvo -> mittausArvo.mittaa())
+                    .average().getAsDouble();
+
             this.kaikkiMittaukset.add(ka);
-            return  ka;
+            return ka;
 
         }
 
