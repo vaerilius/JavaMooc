@@ -8,11 +8,13 @@ public class Noppa {
 
     public Noppa(int tahkojenMaara) {
         this.random = new Random();
+        this.tahkojenMaara = tahkojenMaara;
         // Alusta muuttuja tahkojenMaara tässä
     }
 
     public int heita() {
         // arvotaan luku väliltä 1-tahkojenMaara
-        return 0;
+        
+        return this.random.nextInt(tahkojenMaara) + 1;
     }
 }

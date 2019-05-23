@@ -19,6 +19,9 @@ public class Putki<T>{
     }
 
     public T otaPutkesta() {
+        if (this.t.isEmpty()) {
+            return null;
+        }
         
         return this.t.remove(0);
     }
