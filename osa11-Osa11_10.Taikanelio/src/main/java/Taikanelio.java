@@ -17,15 +17,58 @@ public class Taikanelio {
 
     // toteuta nämä kolme metodia
     public ArrayList<Integer> rivienSummat() {
-        return new ArrayList<>();
+        ArrayList<Integer> rivienSummat = new ArrayList<>();
+
+        for (int i = 0; i < this.nelio.length; i++) {
+            int rivinSumma = 0;
+            for (int j = 0; j < this.nelio[i].length; j++) {
+                rivinSumma += this.nelio[i][j];
+            }
+            rivienSummat.add(rivinSumma);
+        }
+        return rivienSummat;
     }
 
     public ArrayList<Integer> sarakkeidenSummat() {
-        return new ArrayList<>();
+        ArrayList<Integer> sarakkeidenSummat = new ArrayList<>();
+
+        for (int i = 0; i < this.nelio.length; i++) {
+            int sarakkeenSumma = 0;
+            for (int j = 0; j < this.nelio[i].length; j++) {
+                sarakkeenSumma += this.nelio[j][i];
+            }
+            sarakkeidenSummat.add(sarakkeenSumma);
+        }
+
+        return sarakkeidenSummat;
     }
 
     public ArrayList<Integer> lavistajienSummat() {
-        return new ArrayList<>();
+
+        ArrayList<Integer> lavistajienSummat = new ArrayList<>();
+        int lavistajanSumma = 0;
+
+        for (int i = 0; i < this.nelio.length; i++) {
+            for (int j = 0; j < this.nelio[i].length; j++) {
+
+                if (i == j) {
+                    lavistajanSumma += this.nelio[i][j];
+
+                }
+            }
+        }
+        lavistajienSummat.add(lavistajanSumma);
+        lavistajanSumma = 0;
+        int sarake = 0;
+        int rivi = this.nelio.length;
+        while (rivi > 0) {
+            lavistajanSumma += this.nelio[rivi - 1][sarake];
+            sarake++;
+            rivi--;
+        }
+        lavistajienSummat.add(lavistajanSumma);
+
+        return lavistajienSummat;
     }
 
     // valmiit apumetodit -- älä koske näihin
