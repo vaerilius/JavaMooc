@@ -6,6 +6,7 @@ public class Ohjelma {
 
     public static void main(String[] args) {
         Scanner lukija = new Scanner(System.in);
+<<<<<<< HEAD
         Random arpoja = new Random(); // luodaan apuväline arpoja
         System.out.println("Montako satunnaislukua tulostetaan?");
         int montako = lukija.nextInt();
@@ -15,6 +16,9 @@ public class Ohjelma {
             System.out.println(luku);
 
         }
+=======
+        System.out.println("Pull request");
+>>>>>>> 91383cbb9562a38e306a56fbbb14c707d13330ab
     }
 
 }
