@@ -13,7 +13,7 @@ public class EpareiluaMainontaaSovellus extends Application {
     @Override
     public void start(Stage ikkuna) {
         CategoryAxis xAkseli = new CategoryAxis();
-        NumberAxis yAkseli = new NumberAxis(77.0, 77.5, 0.1);
+        NumberAxis yAkseli = new NumberAxis(70.0, 80.0, 0.1);
         yAkseli.setTickLabelsVisible(false);
         yAkseli.setLabel("Suurempi parempi!");
 
