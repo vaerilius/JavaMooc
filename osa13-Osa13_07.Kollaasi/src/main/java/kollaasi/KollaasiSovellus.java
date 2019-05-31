@@ -35,15 +35,22 @@ public class KollaasiSovellus extends Application {
             while (xKoordinaatti < leveys) {
 
                 Color vari = kuvanLukija.getColor(xKoordinaatti, yKoordinaatti);
-                double punainen = vari.getRed();
-                double vihrea = vari.getGreen();
-                double sininen = vari.getBlue();
+
+                double punainen = 1.0 - vari.getRed();
+                double vihrea = 1.0 - vari.getGreen();
+                double sininen = 1.0 - vari.getBlue();
                 double lapinakyvyys = vari.getOpacity();
 
                 Color uusiVari = new Color(punainen, vihrea, sininen, lapinakyvyys);
 
-                kuvanKirjoittaja.setColor(xKoordinaatti, yKoordinaatti, uusiVari);
+                if (xKoordinaatti % 2 == 0 && yKoordinaatti % 2 == 0) {
+                    kuvanKirjoittaja.setColor(xKoordinaatti / 2, yKoordinaatti / 2, uusiVari);
+                    kuvanKirjoittaja.setColor(xKoordinaatti / 2, korkeus / 2 + yKoordinaatti / 2, uusiVari);
+                    kuvanKirjoittaja.setColor(leveys / 2 + xKoordinaatti / 2, yKoordinaatti / 2, uusiVari);
+                    kuvanKirjoittaja.setColor(leveys / 2 + xKoordinaatti / 2, korkeus / 2 + yKoordinaatti / 2, uusiVari);
+                }
 
+                //  kuvanKirjoittaja.setColor(xKoordinaatti, yKoordinaatti, uusiVari);
                 xKoordinaatti++;
             }
 
@@ -53,7 +60,7 @@ public class KollaasiSovellus extends Application {
         ImageView kuva = new ImageView(kohdeKuva);
 
         Pane pane = new Pane();
-        pane.getChildren().add(kuva);
+        pane.getChildren().addAll(kuva);
 
         stage.setScene(new Scene(pane));
         stage.show();
